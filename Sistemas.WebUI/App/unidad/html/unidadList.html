@@ -1,0 +1,34 @@
+﻿
+<div class="panel panel-primary">
+
+    <div class="panel-heading">Unidades</div>
+    <div class="panel-body">
+        <div class="col-md-6">
+            <a class="btn btn-primary" id="link" href="#" ng-click="vm.edit(0)"><i class="glyphicon glyphicon-file"></i>Nuevo</a>
+        </div>
+        <div class="table table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Descripcion</td>
+                        <td>Nemonico</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="unidad in vm.unidades   | itemsPerPage: 10" total-items="vm.totalItems">
+                        <td>{{unidad.id}}</td>
+                        <td>{{unidad.descripcion}}</td>
+                        <td>{{unidad.nemonico}}</td>
+                        <td><a ng-click="vm.edit(unidad.id)">Edit</a></td>
+                        <td><a ng-click="vm.destroy(unidad.id)">Delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <dir-pagination-controls on-page-change="vm.pageChanged(newPageNumber)"></dir-pagination-controls>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿
+<div class="panel panel-primary">
+
+    <div class="panel-heading">Productos</div>
+    <div class="panel-body">
+        <div class="col-md-6">
+            <a class="btn btn-primary" id="link" href="#" ng-click="vm.edit(0)"><i class="glyphicon glyphicon-file"></i>Nuevo</a>
+        </div>
+        <!--<div class="col-xs-10 col-lg-6 col-md-6">
+            <div class="input-group">
+                <input type="text" id="searchText" class="form-control pull-right" placeholder="Search for..." ng-model="query">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <i class="text-muted glyphicon glyphicon-search"></i>
+                    </button>
+                </span>
+            </div>
+        </div>-->
+
+        <div class="table table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Nombre</td>
+                        <td>Unidad</td>
+                        <td>Precio</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="producto in vm.productos   | itemsPerPage: 10" total-items="vm.totalUsers">
+                        <td>{{producto.id}}</td>
+                        <td>{{producto.nombre}}</td>
+                        <td>{{producto.unidad}}</td>
+                        <td>{{producto.precio}}</td>
+                        <td><a ng-click="vm.edit(producto.id)">Edit</a></td>
+                        <td><a ng-click="vm.destroy(producto.id)">Delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+        </div>
+
+    </div>
+</div>

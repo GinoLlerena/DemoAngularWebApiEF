@@ -1,0 +1,7 @@
+﻿{
+   "Data": {
+        "DefaultConnection": {
+            "Connectionstring": "Server=(localdb)\\ProjectsV12;Database=BDSistema;Trusted_Connection=True;"
+        }
+    }
+}
